@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 /**
  * Bitte beschreibe deine Implementierung.
- * @author  <DEIN NAME>
+ * @author  David Hohloch
  */
 public class MyKuromasuSolver extends KuromasuSolver {
     // Dieser Konstruktor ist notwendig für das automatisierte Testen.
@@ -16,6 +16,8 @@ public class MyKuromasuSolver extends KuromasuSolver {
         super(k);
     }
 
+
+    // Man muss einen Algorithmus finden, der die richtigen und nicht überflüsseigen Klauseln aufstellt, die dann schnellstmöglich das Puzzeln lösen.
     @Override
     public Solution solve() {
         // 1. Berechne die Klauselmenge für das in der Membervariable 'game' beschriebene Spiel
@@ -43,7 +45,7 @@ public class MyKuromasuSolver extends KuromasuSolver {
     private void addClause(int... c) {
         try {
             // Debugging:
-            // System.out.println(Arrays.toString(c));
+            System.out.println(Arrays.toString(c));
             solver.addClause(new VecInt(c));
         } catch (ContradictionException e) {
             e.printStackTrace();
